@@ -1,12 +1,74 @@
+c_green = #06efbb;
+
+@font-face {
+	font-family: 'OswaldBold';
+	src: url('../fonts/OswaldBold.eot');
+	src: url('../fonts/OswaldBold.eot') format('embedded-opentype'),
+		 url('../fonts/OswaldBold.woff2') format('woff2'),
+		 url('../fonts/OswaldBold.woff') format('woff'),
+		 url('../fonts/OswaldBold.ttf') format('truetype'),
+		 url('../fonts/OswaldBold.svg#OswaldBold') format('svg');
+}
+@font-face {
+	font-family: 'RobotoBold';
+	src: url('../fonts/RobotoBold.eot');
+	src: url('../fonts/RobotoBold.eot') format('embedded-opentype'),
+		 url('../fonts/RobotoBold.woff2') format('woff2'),
+		 url('../fonts/RobotoBold.woff') format('woff'),
+		 url('../fonts/RobotoBold.ttf') format('truetype'),
+		 url('../fonts/RobotoBold.svg#RobotoBold') format('svg');
+}
+@font-face {
+	font-family: 'RobotoLight';
+	src: url('../fonts/RobotoLight.eot');
+	src: url('../fonts/RobotoLight.eot') format('embedded-opentype'),
+		 url('../fonts/RobotoLight.woff2') format('woff2'),
+		 url('../fonts/RobotoLight.woff') format('woff'),
+		 url('../fonts/RobotoLight.ttf') format('truetype'),
+		 url('../fonts/RobotoLight.svg#RobotoLight') format('svg');
+}
+@font-face {
+	font-family: 'RobotoLightItalic';
+	src: url('../fonts/RobotoLightItalic.eot');
+	src: url('../fonts/RobotoLightItalic.eot') format('embedded-opentype'),
+		 url('../fonts/RobotoLightItalic.woff2') format('woff2'),
+		 url('../fonts/RobotoLightItalic.woff') format('woff'),
+		 url('../fonts/RobotoLightItalic.ttf') format('truetype'),
+		 url('../fonts/RobotoLightItalic.svg#RobotoLightItalic') format('svg');
+}
+@font-face {
+	font-family: 'RobotoMedium';
+	src: url('../fonts/RobotoMedium.eot');
+	src: url('../fonts/RobotoMedium.eot') format('embedded-opentype'),
+		 url('../fonts/RobotoMedium.woff2') format('woff2'),
+		 url('../fonts/RobotoMedium.woff') format('woff'),
+		 url('../fonts/RobotoMedium.ttf') format('truetype'),
+		 url('../fonts/RobotoMedium.svg#RobotoMedium') format('svg');
+}
+@font-face {
+	font-family: 'RobotoRegular';
+	src: url('../fonts/RobotoRegular.eot');
+	src: url('../fonts/RobotoRegular.eot') format('embedded-opentype'),
+		 url('../fonts/RobotoRegular.woff2') format('woff2'),
+		 url('../fonts/RobotoRegular.woff') format('woff'),
+		 url('../fonts/RobotoRegular.ttf') format('truetype'),
+		 url('../fonts/RobotoRegular.svg#RobotoRegular') format('svg');
+}
+
 *
 	margin 0
 	padding 0
 	outline none
-
+body
+	font-family: 'RobotoLight', sans-serif
+	font-size: 22px
+	background: black
 a
 	color: #fefefe
 	&:focus
 		outline: 0
+	&:hover
+		text-decoration: none
 button
 	border none
 .video_wrapper
@@ -40,3 +102,78 @@ button
 		right 0
 		bottom 0
 		cursor pointer
+h1, h2, h3,  h4, h5, h6
+	font-family: 'OswaldBold', sans-serif;
+.button
+	display block
+	width: 261px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 18px;
+	font-family: "RobotoBold", sans-serif;
+	color: rgb(13, 32, 56);
+	background-color: c_green
+	border-radius: 30px;
+	transition: .4s
+	&:focus
+		color: rgb(13, 32, 56);
+		text-decoration: none
+	&:hover
+		color rgb(13, 32, 56);
+		text-decoration: none 
+		background-color: #01ffc6
+	// transform-style: preserve-3d;
+	// perspective: 1000px;
+	// transform-origin: center center;
+	position: relative
+	margin: 0 auto
+// .btnflip-item
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	text-align: center;
+// 	line-height: 60px;
+// 	font-size: 18px;
+// 	font-family: "RobotoBold", sans-serif;
+// 	color: rgb(13, 32, 56);
+// 	background-color: rgba(255,255,255, .05);
+// 	transform-style: preserve-3d;
+// 	backface-visibility: hidden;
+// 	border-radius: 30px;
+// 	transition: 1s;
+// .btnflip_front
+// 	transform: rotateX(0deg) translateZ(20px);
+// 	z-index 9
+// .button:hover .btnflip_front
+// 	transform: rotateX(-180deg) translateZ(20px);
+// .btnflip_back
+// 	transform: rotateX(180deg) translateZ(20px);
+// .button:hover .btnflip_back
+// 	transform: rotateX(0deg) translateZ(20px);
+// .btnflip_center
+// 	background-color: c_green
+// .btnflip_center::before
+// 	content: ""
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	background-color: c_green
+// 	border-radius: 30px;
+// 	transform: translateZ(-1px);
+// .button:hover .btnflip_center
+// 	transform: rotateX(-180deg);
+
+@import "parts/main"
+@import "parts/results"
+@import "parts/plan"
+@import "parts/for"
+@import "parts/prices"
+@import "parts/author"
+@import "parts/testims"
+@import "parts/footer"
+@import "parts/medias"
