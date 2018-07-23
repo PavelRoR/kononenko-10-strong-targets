@@ -1,0 +1,29 @@
+mixin reses(h4,p,cl)
+    .result
+        .result_img(class= cl)
+        h4= h4
+        p= p
+section#results
+    .container
+        h3.general_subtitle По результатам прохождения мини-курса:
+        #result_container
+            .row
+                .col-md-3.col-sm-3
+                    +reses('Получите','пошаговый алгоритм по достижению 10 сильных целей на год','result_first')
+                .col-md-3.col-sm-3
+                    +reses('Сразу пропишем,','правильно сформулируем цели, которые однозначно придут в вашу жизнь','result_second')
+                .col-md-3.col-sm-3
+                    +reses('Уберём блоки','и ограничения, которые препятствуют вашей встрече с целью, которую вы хотите','result_third')
+                .col-md-3.col-sm-3
+                    +reses('Научитесь отличать','свои цели от навязаных, манипулятивных целей и желаний других людей или систем','result_fourth')
+            .row
+                .col-md-3.col-sm-3
+                    +reses('Повысите','самооценку и самоценность','result_fifth')
+                .col-md-3.col-sm-3
+                    +reses('Сможете самостоятельно','работать магическим путем с любой целью (нейро-лингвистически программируя) для ее достижения','result_sixth')
+                .col-md-3.col-sm-3
+                    +reses('Увидите,','что ваши цели хотят встречи с вами не меньше, чем вы их','result_seventh')
+                .col-md-3.col-sm-3
+                    +reses('Освоите','метод Манифестации изобилия из Тета Хилинг','result_eighth')
+        a.button.results_button(href="#prices") Участвовать
+        h3.general_subtitle План курса
