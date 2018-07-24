@@ -1,12 +1,14 @@
 $(document).ready(function () {
     /* Якорь */
-    $("#prices").click(function (f) {
-        f.preventDefault();
-        var a = $(this).attr("href"),
-            b = $(a).offset().top;
-        $("body,html").animate({
-            scrollTop: b
-        }, 500)
+    $(function () {
+        $("a[href^='#prices']").click(function (h) {
+            h.preventDefault();
+            var f = $(this).attr("href"),
+                g = $(f).offset().top;
+            $("body,html").animate({
+                scrollTop: g
+            }, 1500, "swing")
+        });
     });
     /* owl-carousels */
     // $('#sertificats').owlCarousel({
