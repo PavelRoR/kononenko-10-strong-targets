@@ -3,9 +3,16 @@ section#prices
         #price_container
             p.price Стоимость - 
                 span 3 900р.
-            p.price Скидка - 
+            p.price.price_sale Скидка - 
                 span#sale 1 000р.
-            p.price Стоимость сегодня - 
+            p.price.price_today Стоимость сегодня - 
                 span#today 2 900р.
-            a.button.button_buy(href="https://aleksandrkudryashov1.autoweboffice.ru/?r=ordering/cart/as1&id=1925&clean=true&lg=ru" target="_blank")#link Купить
+            a.button.button_buy(href="https://aleksandrkudryashov1.autoweboffice.ru/?r=ordering/cart/as1&id=1925&clean=true&lg=ru" target="_blank")#link
+                span.btnflip-item.btnflip_front Записаться
+                span.btnflip-item.btnflip_center
+                span.btnflip-item.btnflip_back Сейчас
+        .timer
+            h4.general_subtitle До сгорания скидки осталось:
+            .clock
+            .clock-stop
         h3.general_subtitle.author_title О тренере

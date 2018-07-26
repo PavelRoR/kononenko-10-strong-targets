@@ -11,37 +11,56 @@ $(document).ready(function () {
         });
     });
     /* owl-carousels */
-    // $('#sertificats').owlCarousel({
-    //     loop: true,
-    //     margin: 20,
-    //     nav: true,
-    //     navText: ["", ""],
-    //     dots: false,
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         400: {
-    //             items: 2
-    //         },
-    //         600: {
-    //             items: 3
-    //         },
-    //         1000: {
-    //             items: 4
-    //         }
-    //     }
-    // });
-    // $('#reviews').owlCarousel({
-    //     loop: true,
-    //     margin: 20,
-    //     nav: true,
-    //     navText: ["", ""],
-    //     dots: false,
-    //     items: 1,
-    //     autoHeightClass: 'owl-height',
-    //     autoHeight: true
-    // })
+    $('#certs_carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        navText: ["", ""],
+        dots: false,
+        autoHeight: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            481: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            1200: {
+                items: 4
+            }
+        }
+    });
+    $('#video_reviews').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: ["", ""],
+        dots: false,
+        items: 2,
+        autoHeightClass: 'owl-height',
+        autoHeight: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            481: {
+                items: 2
+            }
+        }
+    });
+    $('#text_reviews').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: ["", ""],
+        dots: false,
+        items: 1,
+        autoHeightClass: 'owl-height',
+        autoHeight: true
+    });
     /*Fancybox*/
     $(function () {
         $("[data-fancybox]").fancybox({
@@ -51,10 +70,45 @@ $(document).ready(function () {
         });
     });
     /* Видео */
-    $(".video_wrapper").click(function () {
-        var a = $(this).attr("data-youtube");
-        $(this).html('<iframe src="https://www.youtube.com/embed/' + a + '?showinfo=0&rel=0&autoplay=1" frameborder="0" class="img-thumbnail" allowfullscreen></iframe>')
+    $(".video_wrapper img").click(function () {
+        var a = $(this).parent().attr("data-youtube");
+        $(this).parent().html('<iframe src="https://www.youtube.com/embed/' + a + '?showinfo=0&rel=0&autoplay=1" allowfullscreen></iframe>')
     });
+    /* Таймер */
+ var clock;
+ var futureDate = new Date("July 31, 2018 00:00 AM UTC+3");
+ var currentDate = new Date();
+ var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+ function dayDiff(first, second) {
+     return (second - first) / (1000 * 60 * 60 * 24);
+ }
+ if (dayDiff(currentDate, futureDate) < 100) {
+     $('.clock').addClass('twoDayDigits');
+ } else {
+     $('.clock').addClass('threeDayDigits');
+ }
+ if (diff < 0) {
+     diff = 0;
+     $('.clock-stop').addClass("alert-danger");
+     $('.clock-stop').html("Скидка сгорела!");
+     $('.price_sale, .price_today').remove();
+     $('#link').attr("href", "https://aleksandrkudryashov1.autoweboffice.ru/?r=ordering/cart/as1&id=1926&clean=true&lg=ru");
+
+ }
+ clock = $('.clock').FlipClock(diff, {
+     clockFace: 'HourlyCounter',
+     countdown: true,
+     language: 'ru',
+     callbacks: {
+         stop: function () {
+             $('.clock-stop').addClass("alert-danger");
+             $('.clock-stop').html("Скидка сгорела!");
+             $('.price_sale, .price_today').remove();
+             $('#link').attr("href", "https://aleksandrkudryashov1.autoweboffice.ru/?r=ordering/cart/as1&id=1926&clean=true&lg=ru");
+         }
+     },
+ });
     /*Старые браузеры*/
     var yaBrowserUpdater = new ya.browserUpdater.init({
         "lang": "ru",
